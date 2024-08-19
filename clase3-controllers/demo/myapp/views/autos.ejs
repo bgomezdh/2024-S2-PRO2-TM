@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
+  <title><%= titulo %></title>
+  <body>
+    <%- include('./partials/header') %>
+    <h1><%= titulo %></h1>
+
+    <ol>
+      <% for( let i = 0; i < listado.length; i++ ) { %>
+        <li>marca: <%= listado[i].marca %></li>
+        <li>modelo: <%= listado[i].modelo %> </li>
+        <li>añio: <%= listado[i].anio %></li>
+        <li>color:  <a href="/autos/filtrarPorColor/<%= listado[i].color %>">
+                      <%= listado[i].color %>
+                    </a>
+        </li>
+        <hr>
+      <% } %>
+    </ol>
+  </body>
+</html>
