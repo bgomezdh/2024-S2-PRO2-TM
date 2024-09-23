@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <ol>
+            <li>
+              <p>Nombre: <a href="/bandas/filtrarPorId/<%= detalleBanda.id %>"><%= detalleBanda.nombre %></a></p>
+
+                
+                <p>Detalle:<%= detalleBanda.genero %></p>
+                <img src="/images/<%= detalleBanda.cover %>" alt="">
+            </li>
+        </ol>
+  </body>
+</html>

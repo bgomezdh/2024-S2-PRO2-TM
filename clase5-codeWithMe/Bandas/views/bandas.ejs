@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <ol>
+        <% for( let i = 0; i < listaBandas.length; i++ ) { %>
+            <li>
+                <p>Nombre:<a href="/bandas/filtrarPorId/<%= listaBandas[i].id %>"><%= listaBandas[i].nombre %></a></p>
+                <p>Detalle:<%= listaBandas[i].genero %></p>
+                <img src="/images/<%= listaBandas[i].cover %>" alt="">
+            </li>
+            
+        <% } %>
+        
+        </ol>
+
+   
+  </body>
+</html>

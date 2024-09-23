@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <ol> <% for( let index = 0; index < info.length; index++ ) { %>
+    <li>Nombre:  <a href="/bandas/id/<%= info[index].id  %> "><%= info[index].nombre  %></a></li>
+    <li><img src="<%= info[index].cover %>"  alt=""></li>
+
+    <hr>
+    <% } %>
+      
+    </ol>
+  </body>
+</html>
