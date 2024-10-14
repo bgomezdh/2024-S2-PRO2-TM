@@ -1,12 +1,16 @@
-const db = require('../db/data');
+const db = require('../database/models');
 
 
 const indexController = {
   index: function (req, res) {
 
-    return res.send(db.movies)
-      return res.render("movies", {listaPeliculas: db.movies})
-
+    db.Movie.findAll()
+    .then((result) => {
+      return res.render("movies", {listaPeliculas: result})
+    })
+    .catch((err) => {
+      return console.log(err);
+    });
 
   },
   detalle: function (req, res) {
