@@ -23,9 +23,23 @@ const indexController = {
   detalle: function (req, res) {
     let id = req.params.idPelicula;
 
-   db.Movie.findByPk(id)
+    let filtrado2 = {
+      include: [
+        {association: "genre"},
+        {association: "actors"}] // alias de la rela
+    }
+
+    let filtrado = {
+      include: {
+        all: true,
+        nested: true
+      }
+    }
+
+   db.Movie.findByPk(id, filtrado)
    .then(function(results) {
-      return res.render("detalleMovies", {movie: results})
+      return res.send(results)
+       return res.render("detalleMovies", {movie: results})
    }).catch(function(err) {
       return console.log(err);
     ;
