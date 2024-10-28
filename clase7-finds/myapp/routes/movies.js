@@ -12,7 +12,11 @@ router.get('/id/:idPelicula', movieController.detalle);
 
 /* GET Creat movie page. */
 router.get('/register', movieController.showFormCreate);
+router.post('/register',movieController.store)
 
+// update
+router.get("/update/:id",movieController.showFormUpdate)
+router.post("/update",movieController.update)
 /* GET Search movie page. */
 router.get('/busqueda', movieController.search);
 
